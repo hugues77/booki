@@ -70,13 +70,13 @@ header nav {
     padding: 0;
 }
 header nav .logo img{
-    width: 100px;
+    width: 61.9px;
+    height: 19px;
 }
- header nav .menu{
+header nav .menu{
      display: flex;
      /* gap: 50px; */
      justify-content: space-between;
-     align-items: center;
 }
 
 header nav ul{
@@ -85,12 +85,18 @@ header nav ul{
 }
 
 header nav ul li a{
-    font-size: 17px;
-    padding: 0 20px;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 12px 20px;
+    line-height: 18px;
+
 }
-header nav ul li a:hover{
+
+header nav ul li:hover a{
     color: var(--main-color);
     border-top: 2px solid var(--main-color);
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
 /****** Form ***********/
@@ -131,12 +137,15 @@ header .about .form form .form-input input::placeholder{
 
 header .about .form form .form-button button{
     background-color: var(--main-color);
-    padding: 16px;
+    padding: 15px 16px;
     border-radius: 0px 15px 15px 0px;
     color: white;
     font-weight: bold;
     border: 0;
     cursor: pointer;
+}
+header .about .form form .form-button .icon_btn{
+    display: none;
 }
 
 header .about .buttons-filter{
@@ -147,8 +156,11 @@ header .about .buttons-filter .categories{
     display: flex;
     width: 100%
 }
-header .about .buttons-filter a{
+header .about .buttons-filter .categories .categorie-text{
     margin-left: 30px;
+}
+
+header .about .buttons-filter a{
     border: 2px solid var(--main-bg-color);
     padding: 10px 15px;
     border-radius: 25px;
@@ -181,6 +193,9 @@ header .about .buttons-filter a i{
 /****** Hebergements ***********/
 .hebergements {
     width: 65%;
+}
+.hebergements h3{
+    cursor: pointer;
 }
 .hebergements-cards {
     display: flex;
@@ -219,6 +234,7 @@ header .about .buttons-filter a i{
     margin-bottom: 5px;
     
 }
+
 
 
 /****** Populaires ***********/
@@ -293,9 +309,11 @@ header .about .buttons-filter a i{
 }
 .activites-cards .card-content {
     width: 100%;
+    height: auto;
     padding-left: 15px;
-    justify-content: space-between;
     box-sizing: border-box;
+    display: flex;
+    align-items: center;
 }
 
 .activites-cards .card-title {
@@ -303,7 +321,8 @@ header .about .buttons-filter a i{
     margin-bottom: 4px;
 }
 .activites-cards .card{
-    background-color: var(--main-bg-color);
+    /* background-color: var(--main-bg-color); */
+    border: 2px solid var(--main-bg-color);
     border-radius: 20px;
     padding: 0px 0px 5px 0px;
     filter: none;
@@ -335,18 +354,20 @@ footer .footer{
 /* Medium devices (tablets, less/equal than 1024px) */
 @media (max-width: 1024px) {
     /******************** header *****************/
+    /* header nav .logo img{
+        width: 80px;
+    } */
     header .about .buttons-filter{
         display: block;
         margin-bottom: 15px;
     }
    
-    header .about .buttons-filter a{
-        margin-left: 0px;
-    }
     header .about .buttons-filter .categories h3{
-        padding: 10px;
         font-size: 14px;
-        /* margin-left: 5px; */
+    }
+
+    header .about .buttons-filter .categories .categorie-text:nth-child(1){
+        margin-left: 0px;
     }
 
     .hebergements-and-populaires {
@@ -379,17 +400,75 @@ footer .footer{
     .populaires-cards .card-subtitle {
         font-size: 13px;
     }
+    
+    .activites-cards .card-content {
+        height: 50px;
+        display: flex;
+        align-items: center;
+
+    }
+   
 }
 
 /* Small devices (phones, less than 768px) */
 @media (max-width: 767.98px) {
-    header nav .logo{
-        align-items: center;
+    header nav{
+        margin-bottom: 60px;
     }
+    
     header nav .menu{
-        display: block;
-        padding-bottom: 50px;
+        flex-direction: column;
+        /* padding-bottom: 50px; */
+        border-bottom: 2px solid var(--main-bg-color);
    }
+   
+    header nav .logo{
+        /* width: 61.9px;
+        height: 19px; */
+        text-align: center;
+    }
+    header nav .menu .navlinks{
+        /* display: flex;
+        justify-content: space-between; */
+
+    }
+    header nav ul{
+        display: flex;
+     justify-content: space-between;
+
+
+    }
+    header nav ul li a{
+        
+        padding: 16px 0px;
+    
+    }
+    header nav ul li:hover a{
+        color: var(--main-color);
+        border-top: none;
+        border-bottom: 2px solid var(--main-color);
+        /* padding-left: 20px;
+        padding-right: 20px; */
+    }
+
+   header .about .form form .form-button button{
+        border-radius: 15px;
+        padding: 15px;
+    }
+   header .about .form form .form-button .icon_btn{
+        display: block;
+    }
+    header .about .form form .form-button .icon_btn i{
+        color: white;
+        font-size: 17px;
+    }
+    header .about .form form .form-button .search_btn{
+        display: none;
+    }
+    header .about .buttons-filter .categories {
+       
+
+    }
     .hebergements-and-populaires{
         flex-direction: column-reverse;
     }
@@ -401,6 +480,7 @@ footer .footer{
         border-radius: 0;
         
     }
+   
 
     .hebergements-cards {
         display: block;
